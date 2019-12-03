@@ -1,8 +1,9 @@
 ﻿using System;
+using INTEX.Models;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
-using System.Data.Entity;
 
 namespace INTEX.DAL
 {
@@ -12,5 +13,7 @@ namespace INTEX.DAL
         {
 
         }
+
+        public DbSet<Customer> Customers { get; set; }
     }
 }
