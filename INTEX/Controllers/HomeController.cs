@@ -13,5 +13,11 @@ namespace INTEX.Controllers
         {
             return View();
         }
+
+        //Catalog Action Method
+        public ActionResult Catalog()
+        {
+            return View();
+        }
     }
 }
