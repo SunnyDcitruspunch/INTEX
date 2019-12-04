@@ -3,15 +3,62 @@
     ViewBag.Title = "Login";
 }
 
-<h2>Login</h2>
+<div class="title">
+    <h2>Log in</h2>
+</div>
 
-@using (Html.BeginForm("Login", "Customer", FormMethod.Post))
-{
-    <label for="inputEmail">Email Address</label>
-    @Html.TextBox("Email address")
-    <label for="inputPassword">Password</label>
-    @Html.Password("Password")
-    <button type="submit">Login</button>
-    <span>Does not have an account? Register</span> @Html.ActionLink("Here", "Create", "Customer", new { area = "" }, new { @style = "font-size: 18px" })
-}
+<div class="card">
+    @using (Html.BeginForm("Login", "Customer", FormMethod.Post))
+    {
+        <div class="form-group">
+            @Html.TextBox("Email address", null, new { @class="form-control", @placeholder = "Email"})
+        </div>
+        <div class="form-group">
+            @Html.Password("Password", null, new { @class = "form-control", @placeholder = "Password" })
+        </div>
+        <div class="form-group">
+            <div class="login">
+                <button type="submit" class="btn btn-primary login-button">Login</button>
+            </div>
+            <span>Does not have an account? Register</span> @Html.ActionLink("Here", "Create", "Customer", new { area = "" }, new { @style = "font-size: 18px" })
+        </div>
+    }
+</div>
 
+<style>
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        width: 50%;
+        height: 300px;
+        margin: auto;
+    }
+
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+
+    .title {
+        text-align: center;
+        margin: 3% auto;
+    }
+
+    .form-group {
+        margin: auto;
+        width: 50%;
+    }
+
+    .form-control {
+        margin: 10% auto;
+    }
+
+    .login {
+        display: flex;
+        justify-content: center;
+        margin: 3% auto;
+    }
+
+    .login-button {
+        width: 50%;
+    }
+</style>

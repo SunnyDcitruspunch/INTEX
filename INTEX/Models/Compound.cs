@@ -4,23 +4,27 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Web.Mvc;
 
 namespace INTEX.Models
 {
+    //Datetime string?
     [Table("Compound")]
     public class Compound
     {
         [Key]
-        [Display(Name = "Northwest Labs Test Number")]
-        public int LTNumber { get; set; }
+        [HiddenInput(DisplayValue = false)]
+        public int CompoundID { get; set; }
 
-        [Display(Name = "Customer ID")]
-        public int CustomerID { get; set; }
+        public string LTNumber { get; set; }
+
+        //[HiddenInput(DisplayValue = false)]
+        //public int CustomerID { get; set; }
 
         [Display(Name = "Compound Name")]
         public string CompoundName { get; set; }
 
-        [Display(Name = "Quantity in Milligrams")]
+        [Display(Name = "Quantity (mg)")]
         public double MillQuant { get; set; }
 
         [Display(Name = "Order Total")]
@@ -30,18 +34,18 @@ namespace INTEX.Models
         public string DateArrived { get; set; }
 
         [Display(Name = "Received By")]
-        public int ReceivedBy { get; set; }
+        public string ReceivedBy { get; set; }
 
         [Display(Name = "Active")]
         public bool Active { get; set; }
 
-        [Display(Name = "Due Date")]
+        [Display(Name = "Expected Receive Date")]
         public string DueDate { get; set; }
 
         [Display(Name = "Comments")]
         public string Comments { get; set; }
 
-        [Display(Name = "Northwest Labs Test Number")]
+        [Display(Name = "Quantitative File Type")]
         public string QuantitativeFileType { get; set; }
 
         [Display(Name = "Qualitative Result File")]
@@ -55,5 +59,8 @@ namespace INTEX.Models
 
         [Display(Name = "Cost")]
         public double Cost { get; set; }
+
+        [Display(Name = "Confirmation Sent Date")]
+        public string ConfirmationSentDate { get; set; }
     }
 }

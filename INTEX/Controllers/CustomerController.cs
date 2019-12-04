@@ -10,7 +10,6 @@ namespace INTEX.Controllers
 {
     public class CustomerController : Controller
     {
-        public static List<Compound> lsCompounds = new List<Compound>();
         public static List<Customer> lsCustomers = new List<Customer>();
 
         // GET: Customer
@@ -29,10 +28,18 @@ namespace INTEX.Controllers
             return View();
         }
 
-        public ActionResult Order()
-        {
-            return View();
-        }
+        //public ActionResult Orders()
+        //{
+        //    return View();
+        //}
+
+        //public ActionResult OrderDetail(int sID)
+        //{
+        //    Compound oCompound = lsCompounds.Find(x => x.CompoundID == sID);
+        //    return View(oCompound);
+        //}
+
+
 
         public ActionResult Payment()
         {
@@ -47,16 +54,19 @@ namespace INTEX.Controllers
         [HttpPost]
         public ActionResult AddCustomer(Customer aCustomer)
         {
+
             if (ModelState.IsValid)
             {
+                aCustomer.CustomerID = lsCustomers.Count() + 1;
                 lsCustomers.Add(aCustomer);
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Menu", "CustomerHome");
             }
             else
             {
                 return View(aCustomer);
             }
         }
+
 
         [HttpPost]
         public ActionResult Login(FormCollection form, bool rememberMe = false)
@@ -121,28 +131,6 @@ namespace INTEX.Controllers
             try
             {
                 // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Customer/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Customer/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
 
                 return RedirectToAction("Index");
             }

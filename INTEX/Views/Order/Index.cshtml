@@ -1,0 +1,132 @@
+﻿@model IEnumerable<INTEX.Models.Compound>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="title">
+    <h2>Index</h2>
+</div>
+
+<div>
+    <button type="button" class="btn-primary btn">
+        @Html.ActionLink("Main Menu", "Index", "Customer", new { area = "" }, new { @class = "btn-primary", @style = "text-decoration: none; color: white" })
+    </button>
+    @*<button class="btn btn-primary">
+            @Html.ActionLink("Back to List", "Index", "Order", new { area = "" }, new { @class = "btn-primary", @style = "text-decoration: none; color: white" })
+        </button>*@
+</div>
+<table class="table">
+    <tr>
+        @*<th>
+                @Html.DisplayNameFor(model => model.CustomerID)
+            </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.CompoundName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MillQuant)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderTotal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateArrived)
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.ReceivedBy)
+            </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Active)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DueDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comments)
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.QuantitativeFileType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QualitativeResults)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QuantitativeResults)
+            </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.MTD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConfirmationSentDate)
+        </th>
+        <th>Actions</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.CustomerID)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.CompoundName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MillQuant)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderTotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateArrived)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.ReceivedBy)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Active)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DueDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comments)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.QuantitativeFileType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.QualitativeResults)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.QuantitativeResults)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.MTD)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConfirmationSentDate)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.CompoundID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.CompoundID })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<style>
+    .title {
+        text-align: center;
+        margin: 5% auto;
+    }
+</style>
