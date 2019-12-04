@@ -57,7 +57,7 @@ namespace INTEX.Models
         [Display(Name = "Cost")]
         public double Cost { get; set; }
 
-        [Display(Name = "Confirmation Sent Date")]
+        [HiddenInput(DisplayValue = false)]
         public string ConfirmationSentDate { get; set; }
     }
 }

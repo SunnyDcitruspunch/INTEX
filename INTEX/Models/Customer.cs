@@ -45,7 +45,7 @@ namespace INTEX.Models
 
         [Required(ErrorMessage = "Please enter your password")]
         [Display(Name = "Password")]
-        [StringLength(5, MinimumLength = 5, ErrorMessage = "Password should be at least 5 digits")]
+        [StringLength(28, MinimumLength = 5, ErrorMessage = "Password should be at least 5 digits")]
         public string Password { get; set; }
 
         [Required(ErrorMessage = "Please enter your phone number")]

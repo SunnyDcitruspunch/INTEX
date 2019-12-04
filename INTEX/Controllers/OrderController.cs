@@ -44,7 +44,7 @@ namespace INTEX.Controllers
 
                 aCompound.LTNumber = s;
                 lsCompounds.Add(aCompound);
-                return RedirectToAction("Index", "Payment", aCompound);
+                return RedirectToAction("Index", "Customer", aCompound);
             }
             else
             {

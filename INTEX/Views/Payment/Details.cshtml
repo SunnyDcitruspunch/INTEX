@@ -26,7 +26,7 @@
     </div>
     <div>
         <button type="button" class="btn-primary btn">
-            @Html.ActionLink("Back", "Create", "Order", new { area = "" }, new { @class = "btn-primary", @style = "text-decoration: none; color: white" })
+            @Html.ActionLink("Main Menu", "Index", "Customer", new { area = "" }, new { @class = "btn-primary", @style = "text-decoration: none; color: white" })
         </button>
     </div>
     <hr />
@@ -84,7 +84,7 @@
                 </div>
             </div>
             <br />
-            @Html.ActionLink("Confirm and Pay", "Index", "Customer", new { area = "" }, new { @class = "btn btn-success btn-lg btn-block", @style = "text-decoration: none; color: white", @type = "submit" })
+                @Html.ActionLink("Confirm and Pay", "Index", "Customer", new { area = "" }, new { @class = "btn btn-success btn-lg btn-block", @style = "text-decoration: none; color: white", @type = "submit" })
         </div>
     </div>
 </div>

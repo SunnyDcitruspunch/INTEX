@@ -81,40 +81,27 @@ namespace INTEX.Controllers
         [HttpPost]
         public ActionResult Login(FormCollection form, bool rememberMe = false)
         {
-            String email = form["Email address"].ToString();
-            String password = form["Password"].ToString();
+            //String email = form["Email address"].ToString();
+            //String password = form["Password"].ToString();
 
-            var db = new DBContext();
-            var currentUser = db.Database.SqlQuery<Customer>(
-              "Select * " +
-              "FROM Customers " +
-              "WHERE Email = '" + email + "' AND " +
-              "UserPassword = '" + password + "'");
+            //var db = new DBContext();
+            //var currentUser = db.Database.SqlQuery<Customer>(
+            //  "Select * " +
+            //  "FROM Customer " +
+            //  "WHERE Email = '" + email + "' AND " +
+            //  "Password = '" + password + "'");
 
-            if (currentUser.Count() > 0)
-            {
-                FormsAuthentication.SetAuthCookie(email, rememberMe);
-                return RedirectToAction("Index", "Customer", new { userlogin = email });
-            }
-            else
-            {
-                return View();
-            }
-
-            //if (string.Equals(email, "holden.ford@northwest.com") && string.Equals(password, "greg2019!"))
+            //if (currentUser.Count() > 0)
             //{
             //    FormsAuthentication.SetAuthCookie(email, rememberMe);
-            //    return RedirectToAction("Index", "Customer");
-            //}
-            //else if (string.Equals(email, "bill.tench@northwest.com") && string.Equals(password, "tench2017!"))
-            //{
-            //    FormsAuthentication.SetAuthCookie(email, rememberMe);
-            //    return RedirectToAction("Index", "Customer");
+            //    return RedirectToAction("Index", "Customer", new { userlogin = email });
             //}
             //else
             //{
             //    return View();
             //}
+
+            return RedirectToAction("Index", "Customer");
         }
 
         // GET: Customer/Details/5
