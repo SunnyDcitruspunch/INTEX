@@ -1,0 +1,78 @@
+﻿@model IEnumerable<INTEX.Models.Order>
+
+@{
+    ViewBag.Title = "Order";
+}
+
+<link href="~/Content/SingaporeStyles/SingaporeStyles.css" rel="stylesheet" />
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container backgroundText">
+        <h1 class="display-3">Work Order Status</h1>
+        <h2>View, Edit, Provide a Quote</h2>
+        <hr>
+        <p>
+            @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-info" }) |
+            @Html.ActionLink("Return to Employee Portal", "Index", null, new { @class = "btn btn-info" })
+        </p>
+    </div>
+</div>
+<div class="box green">Passed</div>
+<div class="box gray">In Progress</div>
+<div class="box red">Failed</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LTNumber)
+        </th>
+        <th></th>
+    </tr>
+
+    <!--Passed progress-->
+    @foreach (var item in Model)
+    {
+        if (item.Progress == "Passed")
+        {
+            <tr class="green">
+                <td>
+                    @Html.DisplayFor(modelItem => item.LTNumber)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.LTNumber }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.LTNumber }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.LTNumber })
+                </td>
+            </tr>
+        }
+        else if (item.Progress == "In Progress")
+        {
+            <!--In progress progress-->   
+                <tr class="gray">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LTNumber)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.LTNumber }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.LTNumber }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.LTNumber })
+                    </td>
+                </tr>
+        }
+        else
+        {
+            <!--Failed progress-->
+                <tr class="red">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LTNumber)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.LTNumber }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.LTNumber }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.LTNumber })
+                    </td>
+                </tr>
+        }
+    }
+
+</table>
+

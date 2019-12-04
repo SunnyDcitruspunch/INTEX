@@ -1,0 +1,63 @@
+﻿@model IEnumerable<INTEX.Models.Assay>
+
+@{
+    ViewBag.Title = "Assay";
+}
+
+<h2>Assay</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateAssay")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TypeCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SummaryInfo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DetailedInfo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Procedure)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LiteratureReferences)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EstimatedDaysToComplete)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TypeCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SummaryInfo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DetailedInfo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Procedure)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LiteratureReferences)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EstimatedDaysToComplete)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditAssay", new { id=item.AssayID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AssayID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AssayID })
+        </td>
+    </tr>
+}
+
+</table>

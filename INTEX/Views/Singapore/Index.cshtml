@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<link href="~/Content/SingaporeStyles/SingaporeStyles.css" rel="stylesheet" />
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container backgroundText">
+        <h1 class="display-3">Singapore Office</h1>
+        <h2>Welcome, @ViewBag.EmpName</h2>
+    </div>
+</div>
+
+@Html.ActionLink("View Orders", "Order", null, new { @class = "btn btn-primary btn-block" })
+<br />
+@Html.ActionLink("View Assays", "Assay", null, new { @class = "btn btn-primary btn-block" })
+
+

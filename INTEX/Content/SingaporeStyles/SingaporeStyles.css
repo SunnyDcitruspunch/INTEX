@@ -1,0 +1,28 @@
+﻿.jumbotron {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(SingaporeImages/testTubes.jpg);
+    background-size: cover;
+}
+
+.backgroundText {
+    text-align: center;
+    color: white;
+}
+
+.box {
+    width: 10em;
+    height: auto;
+    border: solid black;
+}
+
+.red {
+    background: #f00;
+}
+
+.green {
+    background: #0f0;
+}
+
+.gray {
+    background: #A9A9A9;
+}
+
