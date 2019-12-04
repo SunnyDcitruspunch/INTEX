@@ -1,9 +1,12 @@
-﻿using System;
+﻿using INTEX.DAL;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using INTEX.Models;
 
 namespace INTEX
 {
@@ -11,6 +14,7 @@ namespace INTEX
     {
         protected void Application_Start()
         {
+            Database.SetInitializer<DBContext>(null);
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }

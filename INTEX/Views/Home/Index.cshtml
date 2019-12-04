@@ -2,6 +2,96 @@
 @{
     ViewBag.Title = "Index";
 }
+<html>
+<head>
+    <link href="~/Content/DakotaStyle.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="row jumbotron home-page-bkimage">
+        <div class="column">
+            <h1><b>Welcome to NorthWest Labs</b></h1>
+            <hr />
+            <h3><b>Our promise is to make sure that you are taken care of with every step of the pharmacology process</b></h3>
+            <br />
+            <div class="home-page-button text-center">
+                <h4>Check out our assay catalog</h4>
+                @Html.ActionLink("GO", "Catalog", null, new { @class = "btn btn-lrg btn-dark" })
+            </div>
+            <br />
+            <div class="home-page-button text-center">
+                <h4>Call our Seattle office for quotes, anytime you want</h4>
+                @Html.ActionLink("GO", "Catalog", null, new { @class = "btn btn-lrg btn-dark" })
+            </div>
+            <br />
+            <div class="home-page-button text-center">
+                <h4>Read our story of how we have been in business for 100+ years</h4>
+                @Html.ActionLink("GO", "Catalog", null, new { @class = "btn btn-lrg btn-dark" })
+            </div>
+        </div>
+        <div class="column columntwo">
+            <!-- Slideshow container -->
+            <br /><br /><br /><br />
+            <div class="slideshow-container">
 
-<h1>Hello.</h1>
+                <!-- Full-width images with number and caption text -->
+                <div class="mySlides">
+                    <div class="numbertext">1 / 2</div>
+                    <img src="https://images.unsplash.com/photo-1563213126-a4273aed2016?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" style="width:100%">
+                    <div class="text"><b>TOP NOTCH ASSAY TESTS</b></div>
+                </div>
+
+                <div class="mySlides">
+                    <div class="numbertext">2 / 2</div>
+                    <img src="https://images.unsplash.com/photo-1544991875-5dc1b05f607d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" style="width:100%">
+                    <div class="text"><b>24/7 CUSTOMER SUPPORT</b></div>
+                </div>
+
+                <!-- Next and previous buttons -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+
+            <!-- The dots/circles -->
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+</body>
+</html>
 

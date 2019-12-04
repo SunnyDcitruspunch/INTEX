@@ -22,7 +22,7 @@ namespace INTEX.Models
         public string SummaryInfo { get; set; }
 
         [Display(Name = "Assay Details")]
-        public string DetailInfo { get; set; }
+        public string DetailedInfo { get; set; }
 
         [Display(Name = "Assay Procedure")]
         public string Procedure { get; set; }
