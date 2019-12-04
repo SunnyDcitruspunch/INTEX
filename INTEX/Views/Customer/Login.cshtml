@@ -5,12 +5,13 @@
 
 <h2>Login</h2>
 
-@using (Html.BeginForm("Login", "Home", FormMethod.Post))
+@using (Html.BeginForm("Login", "Customer", FormMethod.Post))
 {
     <label for="inputEmail">Email Address</label>
     @Html.TextBox("Email address")
     <label for="inputPassword">Password</label>
     @Html.Password("Password")
     <button type="submit">Login</button>
+    <span>Does not have an account? Register</span> @Html.ActionLink("Here", "Create", "Customer", new { area = "" }, new { @style = "font-size: 18px" })
 }
 

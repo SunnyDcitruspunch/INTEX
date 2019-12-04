@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="menu">
+    <div class="title">
+        <h2>Hi XXX, so happy to see you again!</h2>
+    </div>
+    <div class="buttons">
+        <button type="button" class="btn-lg btn">
+            @Html.ActionLink("Create a New Order", "CreateOrder", null, new { @class = "btn btn-outline-primary btn-lg", @style = "text-decoration: none" })
+        </button>
+        <button type="button" class="btn-lg btn">
+            @Html.ActionLink("Track Existing Orders", "Report", null, new { @class = "btn btn-outline-primary btn-lg", @style = "text-decoration: none" })
+        </button>
+        <button type="button" class="btn-lg btn">
+            @Html.ActionLink("Order Status / Report", "CreateOrder", null, new { @class = "btn btn-outline-primary btn-lg", @style = "text-decoration: none" })
+        </button>
+        <button type="button" class="btn-lg btn">
+            @Html.ActionLink("Payments", "CreateOrder", null, new { @class = "btn btn-outline-primary btn-lg payment", @style = "text-decoration: none" })
+        </button>
+    </div>    
+</div>
+
+
+<style>
+    .title {
+        text-align: center;
+        margin: 5% auto;
+    }
+
+    #menu {
+        width: 50%;
+        margin: auto;
+    }
+
+    .buttons {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+    }
+
+    .buttons .btn {
+        height: 73px;
+        width: 200px;
+        text-align:center;
+    }
+
+    .btn .payment {
+        line-height: 40px;
+    }
+</style>
+
+

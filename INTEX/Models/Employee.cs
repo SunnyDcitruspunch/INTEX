@@ -7,19 +7,19 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace INTEX.Models
 {
-    [Table("Customer")]
-    public class Customer
+    [Table("Employee")]
+    public class Employee
     {
         [Key]
-        public int CustomerID { get; set; }
+        public int EmployeeID { get; set; }
 
         [Required(ErrorMessage = "Please enter your first name")]
         [Display(Name = "First Name")]
-        public string FirstName { get; set; }
+        public string EmpFirstName { get; set; }
 
         [Required(ErrorMessage = "Please enter your last name")]
         [Display(Name = "Last Name")]
-        public string LastName { get; set; }
+        public string EmpLastName { get; set; }
 
         [Display(Name = "Address")]
         public string Address { get; set; }
@@ -46,5 +46,7 @@ namespace INTEX.Models
         [Display(Name = "Phone Number")]
         [RegularExpression(@"^(\()\d{3}(\))(\s)\d{3}(-)\d{4}$", ErrorMessage = "Phone number should be in the format (xxx) xxx-xxxx")]
         public string Phone { get; set; }
+
+        public int PositionID { get; set; }
     }
 }

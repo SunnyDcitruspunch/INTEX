@@ -38,7 +38,7 @@
                     <a class="nav-link" href="#">Worker Portal</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Customer Portal</a>
+                    @Html.ActionLink("Customer Portal", "Login", "Customer", new { area = "" }, new { @class = "nav-link" })
                 </li>
             </ul>
         </div>
