@@ -7,12 +7,10 @@ using System.Web;
 
 namespace INTEX.Models
 {
-    public class Order
+    public class Report
     {
-        public DbSet<Customer> Customers { get; set; }
         public DbSet<Compound> Compounds { get; set; }
         public DbSet<Assay> Assays { get; set; }
         public DbSet<Invoice> Invoices { get; set; }
     }
-
 }

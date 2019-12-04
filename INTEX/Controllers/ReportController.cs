@@ -1,38 +1,36 @@
 ﻿using System;
-using INTEX.DAL;
-using INTEX.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using INTEX.DAL;
+using INTEX.Models;
 
 namespace INTEX.Controllers
 {
-    public class PaymentController : Controller
+    public class ReportController : Controller
     {
-
         DBContext db = new DBContext();
 
-        // GET: Payment
+        // GET: Report
         public ActionResult Index()
         {
             return View();
         }
 
-        // GET: Payment/Details/5
-        public ActionResult Details(Compound aCompound)
+        // GET: Report/Details/5
+        public ActionResult Details(int id)
         {
-            ViewBag.compoundName = aCompound.CompoundName;
-            return View(aCompound);
+            return View();
         }
 
-        // GET: Payment/Create
+        // GET: Report/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Payment/Create
+        // POST: Report/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
@@ -48,13 +46,13 @@ namespace INTEX.Controllers
             }
         }
 
-        // GET: Payment/Edit/5
+        // GET: Report/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: Payment/Edit/5
+        // POST: Report/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -70,13 +68,13 @@ namespace INTEX.Controllers
             }
         }
 
-        // GET: Payment/Delete/5
+        // GET: Report/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Payment/Delete/5
+        // POST: Report/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

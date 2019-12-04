@@ -8,18 +8,12 @@ using System.Web.Mvc;
 
 namespace INTEX.Models
 {
-    //Datetime string?
     [Table("Compound")]
     public class Compound
     {
         [Key]
         [HiddenInput(DisplayValue = false)]
-        public int CompoundID { get; set; }
-
         public string LTNumber { get; set; }
-
-        //[HiddenInput(DisplayValue = false)]
-        //public int CustomerID { get; set; }
 
         [Display(Name = "Compound Name")]
         public string CompoundName { get; set; }
@@ -45,12 +39,15 @@ namespace INTEX.Models
         [Display(Name = "Comments")]
         public string Comments { get; set; }
 
+        [HiddenInput(DisplayValue = false)]
         [Display(Name = "Quantitative File Type")]
         public string QuantitativeFileType { get; set; }
 
+        [HiddenInput(DisplayValue = false)]
         [Display(Name = "Qualitative Result File")]
         public string QualitativeResults { get; set; }
 
+        [HiddenInput(DisplayValue = false)]
         [Display(Name = "Quantitative Result File")]
         public string QuantitativeResults { get; set; }
 

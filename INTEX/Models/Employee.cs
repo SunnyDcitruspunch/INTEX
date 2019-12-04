@@ -44,7 +44,7 @@ namespace INTEX.Models
 
         [Required(ErrorMessage = "Please enter your phone number")]
         [Display(Name = "Phone Number")]
-        [RegularExpression(@"^(\()\d{3}(\))(\s)\d{3}(-)\d{4}$", ErrorMessage = "Phone number should be in the format (xxx) xxx-xxxx")]
+        [StringLength(5, MinimumLength = 10, ErrorMessage = "Phone number should be 10 digits")]
         public string Phone { get; set; }
 
         public int PositionID { get; set; }

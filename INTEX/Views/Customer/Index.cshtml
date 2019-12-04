@@ -16,10 +16,10 @@
             @Html.ActionLink("Track Existing Orders", "Index", "Order", new { area = "" }, new { @class = "btn btn-outline-primary btn-lg", @style = "text-decoration: none" })
         </button>
         <button type="button" class="btn-lg btn">
-            @Html.ActionLink("Order Status / Report", "CreateOrder", null, new { @class = "btn btn-outline-primary btn-lg", @style = "text-decoration: none" })
+            @Html.ActionLink("Order Status / Report", "Index", "Report", new { area = "" }, new { @class = "btn btn-outline-primary btn-lg", @style = "text-decoration: none" })
         </button>
         <button type="button" class="btn-lg btn">
-            @Html.ActionLink("Payments", "CreateOrder", null, new { @class = "btn btn-outline-primary btn-lg payment", @style = "text-decoration: none" })
+            @Html.ActionLink("Manage My Payments", "CreateOrder", null, new { @class = "btn btn-outline-primary btn-lg", @style = "text-decoration: none" })
         </button>
     </div>    
 </div>
@@ -46,10 +46,6 @@
         height: 73px;
         width: 200px;
         text-align:center;
-    }
-
-    .btn .payment {
-        line-height: 40px;
     }
 </style>
 

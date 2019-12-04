@@ -1,4 +1,5 @@
-﻿using INTEX.Models;
+﻿using INTEX.DAL;
+using INTEX.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,19 +29,6 @@ namespace INTEX.Controllers
             return View();
         }
 
-        //public ActionResult Orders()
-        //{
-        //    return View();
-        //}
-
-        //public ActionResult OrderDetail(int sID)
-        //{
-        //    Compound oCompound = lsCompounds.Find(x => x.CompoundID == sID);
-        //    return View(oCompound);
-        //}
-
-
-
         public ActionResult Payment()
         {
             return View();
@@ -67,35 +55,6 @@ namespace INTEX.Controllers
             }
         }
 
-
-        [HttpPost]
-        public ActionResult Login(FormCollection form, bool rememberMe = false)
-        {
-            String email = form["Email address"].ToString();
-            String password = form["Password"].ToString();
-
-            if (string.Equals(email, "holden.ford@northwest.com") && string.Equals(password, "greg2019!"))
-            {
-                FormsAuthentication.SetAuthCookie(email, rememberMe);
-                return RedirectToAction("Index", "Customer");
-            }
-            else if (string.Equals(email, "bill.tench@northwest.com") && string.Equals(password, "tench2017!"))
-            {
-                FormsAuthentication.SetAuthCookie(email, rememberMe);
-                return RedirectToAction("Index", "Customer");
-            }
-            else
-            {
-                return View();
-            }
-        }
-
-        // GET: Customer/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
         // GET: Customer/Create
         public ActionResult Create()
         {
@@ -104,18 +63,64 @@ namespace INTEX.Controllers
 
         // POST: Customer/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Customer aCustomer)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                aCustomer.CustomerID = lsCustomers.Count() + 1;
+                lsCustomers.Add(aCustomer);
+                return RedirectToAction("Login", "Customer");
             }
-            catch
+            else
+            {
+                return View(aCustomer);
+            }
+        }
+
+
+        [HttpPost]
+        public ActionResult Login(FormCollection form, bool rememberMe = false)
+        {
+            String email = form["Email address"].ToString();
+            String password = form["Password"].ToString();
+
+            var db = new DBContext();
+            var currentUser = db.Database.SqlQuery<Customer>(
+              "Select * " +
+              "FROM Customers " +
+              "WHERE Email = '" + email + "' AND " +
+              "UserPassword = '" + password + "'");
+
+            if (currentUser.Count() > 0)
+            {
+                FormsAuthentication.SetAuthCookie(email, rememberMe);
+                return RedirectToAction("Index", "Customer", new { userlogin = email });
+            }
+            else
             {
                 return View();
             }
+
+            //if (string.Equals(email, "holden.ford@northwest.com") && string.Equals(password, "greg2019!"))
+            //{
+            //    FormsAuthentication.SetAuthCookie(email, rememberMe);
+            //    return RedirectToAction("Index", "Customer");
+            //}
+            //else if (string.Equals(email, "bill.tench@northwest.com") && string.Equals(password, "tench2017!"))
+            //{
+            //    FormsAuthentication.SetAuthCookie(email, rememberMe);
+            //    return RedirectToAction("Index", "Customer");
+            //}
+            //else
+            //{
+            //    return View();
+            //}
+        }
+
+        // GET: Customer/Details/5
+        public ActionResult Details(int id)
+        {
+            return View();
         }
 
         // GET: Customer/Edit/5

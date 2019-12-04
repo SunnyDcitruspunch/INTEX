@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Web.Mvc;
 
 namespace INTEX.Models
 {
@@ -42,9 +43,17 @@ namespace INTEX.Models
         [EmailAddress]
         public string Email { get; set; }
 
+        [Required(ErrorMessage = "Please enter your password")]
+        [Display(Name = "Password")]
+        [StringLength(5, MinimumLength = 5, ErrorMessage = "Password should be at least 5 digits")]
+        public string Password { get; set; }
+
         [Required(ErrorMessage = "Please enter your phone number")]
         [Display(Name = "Phone Number")]
-        [RegularExpression(@"^(\()\d{3}(\))(\s)\d{3}(-)\d{4}$", ErrorMessage = "Phone number should be in the format (xxx) xxx-xxxx")]
+        [StringLength(10, MinimumLength = 10, ErrorMessage = "Phone number should be 10 digits")]
         public string Phone { get; set; }
+
+        [HiddenInput(DisplayValue = false)]
+        public double AdvanceMoney { get; set; }
     }
 }

@@ -20,9 +20,9 @@ namespace INTEX.Controllers
         }
 
         // GET: Order/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(string ltnum)
         {
-            Compound oCompound = lsCompounds.Find(x => x.CompoundID == id);
+            Compound oCompound = lsCompounds.Find(x => x.LTNumber == ltnum);
             return View(oCompound);
         }
 
