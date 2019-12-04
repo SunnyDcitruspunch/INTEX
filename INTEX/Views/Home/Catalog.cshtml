@@ -3,11 +3,18 @@
 @{
     ViewBag.Title = "Catalog";
 }
-<body>
-    <h2>Catalog Items</h2>
-    <link href="~/Content/DakotaStyle.css" rel="stylesheet" />
 
-    <button class="collapsible">Biochemical Pharmacology Assays</button>
+<link href="~/Content/DakotaStyle.css" rel="stylesheet" />
+
+<body>
+    <h1 class="text-center">
+        <b>Assay Catalog</b>
+    </h1>
+    <br />
+
+    <button class="collapsible">
+            <b class="collapsible-writing">Biochemical Pharmacology Assays</b>
+    </button>
     <div class="content">
         <p>
             <table class="table">
@@ -44,7 +51,7 @@
                                 </a>
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.EstimaEstimateDaysToComplete)
+                                @Html.DisplayFor(modelItem => item.EstimaEstimateDaysToComplete) Business Day(s)
                             </td>
                             <td>
                                 @Html.ActionLink("Details", "Details", new { id = item.AssayID }, new { @class = "btn btn-lrg btn-info" })
@@ -55,8 +62,14 @@
 
             </table>
         </p>
+        <hr />
+        <p class="text-center">
+            <b>Pricing varies depending on the compound being tested, for a quote give us a call at <a href="byu.edu">(801) 555-5555</a></b>
+        </p>
     </div>
-    <button class="collapsible">DiscoveryScreen® Assays</button>
+    <button class="collapsible">
+        <b class="collapsible-writing">DiscoveryScreen® Assays</b>
+    </button>
     <div class="content">
         <p>
             <table class="table">
@@ -90,9 +103,10 @@
                             <td>
                                 <a href="byu.edu">
                                     @Html.DisplayFor(modelItem => item.LiteratureReference)
-                                </a>                            </td>
+                                </a>
+                            </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.EstimaEstimateDaysToComplete)
+                                @Html.DisplayFor(modelItem => item.EstimaEstimateDaysToComplete) Business Day(s)
                             </td>
                             <td>
                                 @Html.ActionLink("Details", "Details", new { id = item.AssayID }, new { @class = "btn btn-lrg btn-info" })
@@ -103,8 +117,14 @@
 
             </table>
         </p>
+        <hr />
+        <p class="text-center">
+            <b>Pricing varies depending on the compound being tested, for a quote give us a call at <a href="byu.edu">(801) 555-5555</a></b>
+        </p>
     </div>
-    <button class="collapsible">ImmunoScreen® Assays</button>
+    <button class="collapsible">
+        <b class="collapsible-writing">ImmunoScreen® Assays</b>
+    </button>
     <div class="content">
         <p>
             <table class="table">
@@ -138,9 +158,10 @@
                             <td>
                                 <a href="byu.edu">
                                     @Html.DisplayFor(modelItem => item.LiteratureReference)
-                                </a>                            </td>
+                                </a>
+                            </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.EstimaEstimateDaysToComplete)
+                                @Html.DisplayFor(modelItem => item.EstimaEstimateDaysToComplete) Business Day(s)
                             </td>
                             <td>
                                 @Html.ActionLink("Details", "Details", new { id = item.AssayID }, new { @class = "btn btn-lrg btn-info" })
@@ -151,8 +172,14 @@
 
             </table>
         </p>
+        <hr />
+        <p class="text-center">
+            <b>Pricing varies depending on the compound being tested, for a quote give us a call at <a href="byu.edu">(801) 555-5555</a></b>
+        </p>
     </div>
-    <button class="collapsible">ProfilingScreen® Assays</button>
+    <button class="collapsible">
+        <b class="collapsible-writing">ProfilingScreen® Assays</b>
+    </button>
     <div class="content">
         <p>
             <table class="table">
@@ -186,9 +213,10 @@
                             <td>
                                 <a href="byu.edu">
                                     @Html.DisplayFor(modelItem => item.LiteratureReference)
-                                </a>                            </td>
+                                </a>
+                            </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.EstimaEstimateDaysToComplete)
+                                @Html.DisplayFor(modelItem => item.EstimaEstimateDaysToComplete) Business Day(s)
                             </td>
                             <td>
                                 @Html.ActionLink("Details", "Details", new { id = item.AssayID }, new { @class = "btn btn-lrg btn-info" })
@@ -199,8 +227,14 @@
 
             </table>
         </p>
+        <hr />
+        <p class="text-center">
+            <b>Pricing varies depending on the compound being tested, for a quote give us a call at <a href="byu.edu">(801) 555-5555</a></b>
+        </p>
     </div>
-    <button class="collapsible">PharmaScreen® Assays</button>
+    <button class="collapsible">
+        <b class="collapsible-writing">PharmaScreen® Assays</b>
+    </button>
     <div class="content">
         <p>
             <table class="table">
@@ -234,9 +268,10 @@
                             <td>
                                 <a href="byu.edu">
                                     @Html.DisplayFor(modelItem => item.LiteratureReference)
-                                </a>                            </td>
+                                </a>
+                            </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.EstimaEstimateDaysToComplete)
+                                @Html.DisplayFor(modelItem => item.EstimaEstimateDaysToComplete) Business Day(s)
                             </td>
                             <td>
                                 @Html.ActionLink("Details", "Details", new { id = item.AssayID }, new { @class = "btn btn-lrg btn-info" })
@@ -247,8 +282,14 @@
 
             </table>
         </p>
+        <hr />
+        <p class="text-center">
+            <b>Pricing varies depending on the compound being tested, for a quote give us a call at <a href="byu.edu">(801) 555-5555</a></b>
+        </p>
     </div>
-    <button class="collapsible">CustomScreen™ Assays</button>
+    <button class="collapsible">
+        <b class="collapsible-writing">CustomScreen™ Assays</b>
+    </button>
     <div class="content">
         <p>
             <table class="table">
@@ -282,9 +323,10 @@
                             <td>
                                 <a href="byu.edu">
                                     @Html.DisplayFor(modelItem => item.LiteratureReference)
-                                </a>                            </td>
+                                </a>
+                            </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.EstimaEstimateDaysToComplete)
+                                @Html.DisplayFor(modelItem => item.EstimaEstimateDaysToComplete) Business Day(s)
                             </td>
                             <td>
                                 @Html.ActionLink("Details", "Details", new { id = item.AssayID }, new { @class = "btn btn-lrg btn-info" })
@@ -294,6 +336,10 @@
                 }
 
             </table>
+        </p>
+        <hr />
+        <p class="text-center">
+            <b>Pricing varies depending on the compound being tested, for a quote give us a call at <a href="byu.edu">(801) 555-5555</a></b>
         </p>
     </div>
 
