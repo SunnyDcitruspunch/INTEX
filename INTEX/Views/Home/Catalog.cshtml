@@ -1,0 +1,320 @@
+﻿@model IEnumerable<INTEX.Models.Assay>
+
+@{
+    ViewBag.Title = "Catalog";
+}
+<body>
+    <h2>Catalog Items</h2>
+    <link href="~/Content/DakotaStyle.css" rel="stylesheet" />
+
+    <button class="collapsible">Biochemical Pharmacology Assays</button>
+    <div class="content">
+        <p>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.AssayID)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SummaryInfo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.LiteratureReference)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EstimaEstimateDaysToComplete)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    if (item.TypeCode == "BP")
+                    {
+                        <tr>
+                            <td>
+                                Assay #@Html.DisplayFor(modelItem => item.AssayID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SummaryInfo)
+                            </td>
+                            <td>
+                                <a href="byu.edu">
+                                    @Html.DisplayFor(modelItem => item.LiteratureReference)
+                                </a>
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EstimaEstimateDaysToComplete)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Details", "Details", new { id = item.AssayID }, new { @class = "btn btn-lrg btn-info" })
+                            </td>
+                        </tr>
+                    }
+                }
+
+            </table>
+        </p>
+    </div>
+    <button class="collapsible">DiscoveryScreen® Assays</button>
+    <div class="content">
+        <p>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.AssayID)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SummaryInfo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.LiteratureReference)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EstimaEstimateDaysToComplete)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    if (item.TypeCode == "DS")
+                    {
+                        <tr>
+                            <td>
+                                Assay #@Html.DisplayFor(modelItem => item.AssayID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SummaryInfo)
+                            </td>
+                            <td>
+                                <a href="byu.edu">
+                                    @Html.DisplayFor(modelItem => item.LiteratureReference)
+                                </a>                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EstimaEstimateDaysToComplete)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Details", "Details", new { id = item.AssayID }, new { @class = "btn btn-lrg btn-info" })
+                            </td>
+                        </tr>
+                    }
+                }
+
+            </table>
+        </p>
+    </div>
+    <button class="collapsible">ImmunoScreen® Assays</button>
+    <div class="content">
+        <p>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.AssayID)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SummaryInfo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.LiteratureReference)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EstimaEstimateDaysToComplete)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    if (item.TypeCode == "IS")
+                    {
+                        <tr>
+                            <td>
+                                Assay #@Html.DisplayFor(modelItem => item.AssayID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SummaryInfo)
+                            </td>
+                            <td>
+                                <a href="byu.edu">
+                                    @Html.DisplayFor(modelItem => item.LiteratureReference)
+                                </a>                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EstimaEstimateDaysToComplete)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Details", "Details", new { id = item.AssayID }, new { @class = "btn btn-lrg btn-info" })
+                            </td>
+                        </tr>
+                    }
+                }
+
+            </table>
+        </p>
+    </div>
+    <button class="collapsible">ProfilingScreen® Assays</button>
+    <div class="content">
+        <p>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.AssayID)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SummaryInfo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.LiteratureReference)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EstimaEstimateDaysToComplete)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    if (item.TypeCode == "PF")
+                    {
+                        <tr>
+                            <td>
+                                Assay #@Html.DisplayFor(modelItem => item.AssayID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SummaryInfo)
+                            </td>
+                            <td>
+                                <a href="byu.edu">
+                                    @Html.DisplayFor(modelItem => item.LiteratureReference)
+                                </a>                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EstimaEstimateDaysToComplete)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Details", "Details", new { id = item.AssayID }, new { @class = "btn btn-lrg btn-info" })
+                            </td>
+                        </tr>
+                    }
+                }
+
+            </table>
+        </p>
+    </div>
+    <button class="collapsible">PharmaScreen® Assays</button>
+    <div class="content">
+        <p>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.AssayID)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SummaryInfo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.LiteratureReference)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EstimaEstimateDaysToComplete)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    if (item.TypeCode == "PS")
+                    {
+                        <tr>
+                            <td>
+                                Assay #@Html.DisplayFor(modelItem => item.AssayID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SummaryInfo)
+                            </td>
+                            <td>
+                                <a href="byu.edu">
+                                    @Html.DisplayFor(modelItem => item.LiteratureReference)
+                                </a>                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EstimaEstimateDaysToComplete)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Details", "Details", new { id = item.AssayID }, new { @class = "btn btn-lrg btn-info" })
+                            </td>
+                        </tr>
+                    }
+                }
+
+            </table>
+        </p>
+    </div>
+    <button class="collapsible">CustomScreen™ Assays</button>
+    <div class="content">
+        <p>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.AssayID)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SummaryInfo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.LiteratureReference)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EstimaEstimateDaysToComplete)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    if (item.TypeCode == "CS")
+                    {
+                        <tr>
+                            <td>
+                                Assay #@Html.DisplayFor(modelItem => item.AssayID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SummaryInfo)
+                            </td>
+                            <td>
+                                <a href="byu.edu">
+                                    @Html.DisplayFor(modelItem => item.LiteratureReference)
+                                </a>                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EstimaEstimateDaysToComplete)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Details", "Details", new { id = item.AssayID }, new { @class = "btn btn-lrg btn-info" })
+                            </td>
+                        </tr>
+                    }
+                }
+
+            </table>
+        </p>
+    </div>
+
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+
+</body>
+
+
