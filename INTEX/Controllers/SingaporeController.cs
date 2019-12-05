@@ -169,6 +169,12 @@ namespace INTEX.Controllers
             return View(oCAD);
         }
 
+        // Calendar
+        public ActionResult CalendarCAD()
+        {
+            return View();
+        }
+
         // GET: Order (now compounds)-----------------------------------------------------------------------------------
         public ActionResult Order()
         {
