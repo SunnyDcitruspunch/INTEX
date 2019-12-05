@@ -1,0 +1,114 @@
+﻿@model INTEX.Models.WorkOrder
+
+@{
+    ViewBag.Title = "DetailsWorkOrder";
+}
+
+<h2>Details Work Order</h2>
+
+<div>
+    <h4>WorkOrder</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Progress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Progress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LTNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LTNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderTotal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderTotal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateArrived)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateArrived)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReceivedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReceivedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DueDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DueDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quote)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Discount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Discount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CurrentCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CurrentCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConfirmationSentDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConfirmationSentDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SummaryReport)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SummaryReport)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditWorkOrder", new { id = Model.OrderID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

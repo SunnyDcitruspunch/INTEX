@@ -1,0 +1,65 @@
+﻿@model IEnumerable<INTEX.Models.CompoundAssayDetails>
+
+@{
+    ViewBag.Title = "CAD";
+}
+
+<link href="~/Content/SingaporeStyles/SingaporeStyles.css" rel="stylesheet" />
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container backgroundText">
+        <h1 class="display-3">Scheduled Tests</h1>
+        <h2>Input Actual Cost and Scheduled Date</h2>
+        <hr>
+        <p>
+            @Html.ActionLink("Create New", "CreateCAD", null, new { @class = "btn btn-info" }) |
+            @Html.ActionLink("Return to Employee Portal", "Index", null, new { @class = "btn btn-info" })
+        </p>
+    </div>
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CompoundSeqNum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AssayID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StatusCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ScheduledDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompoundSeqNum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AssayID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StatusCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ScheduledDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditCAD", new { id=item.LTNumber }) |
+            @Html.ActionLink("Details", "DetailsCAD", new { id=item.LTNumber }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.LTNumber })
+        </td>
+    </tr>
+}
+
+</table>

@@ -11,9 +11,12 @@
         <h2>Welcome, @ViewBag.EmpName</h2>
     </div>
 </div>
-
-@Html.ActionLink("View Orders", "Order", null, new { @class = "btn btn-primary btn-block" })
+@Html.ActionLink("Work Orders", "WorkOrder", null, new { @class = "btn btn-primary btn-block" })
 <br />
-@Html.ActionLink("View Assays", "Assay", null, new { @class = "btn btn-primary btn-block" })
+@Html.ActionLink("View Scheduled Tests", "CAD", null, new { @class = "btn btn-primary btn-block" })
+<br />
+@Html.ActionLink("Assays", "Assay", null, new { @class = "btn btn-primary btn-block" })
+<br />
+@Html.ActionLink("Compounds", "Order", null, new { @class = "btn btn-warning btn-block" })
 
 

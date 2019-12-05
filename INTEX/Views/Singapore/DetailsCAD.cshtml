@@ -1,0 +1,58 @@
+﻿@model INTEX.Models.CompoundAssayDetails
+
+@{
+    ViewBag.Title = "DetailsCAD";
+}
+
+<h2>Scheduled Test Details</h2>
+
+<div>
+    <h4>Scheduled Tests</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CompoundSeqNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompoundSeqNum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AssayID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AssayID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StatusCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StatusCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ScheduledDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ScheduledDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.LTNumber }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

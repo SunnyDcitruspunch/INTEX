@@ -10,6 +10,8 @@ namespace INTEX.Controllers
 {
     public class SingaporeController : Controller
     {
+        public static List<WorkOrder> lstWorkOrders = new List<WorkOrder>();
+        public static List<CompoundAssayDetails> lstCAD = new List<CompoundAssayDetails>();
         public static List<Order> lstOrders = new List<Order>();
         public static List<Progress> lstProgress = new List<Progress>();
         public static List<Assay> lstAssay = new List<Assay>();
@@ -39,6 +41,7 @@ namespace INTEX.Controllers
                     ProgressCode = "Failed",
                     ProgressDesc = "Failed"
                 });
+
                 return View();
             }
             else
@@ -48,8 +51,128 @@ namespace INTEX.Controllers
 
         }
 
+        // GET: Work Order--------------------------------------------------------------
+        public ActionResult WorkOrder()
+        {
+            return View(lstWorkOrders);
+        }
+
+        // CREATE: Work Order
+        public ActionResult CreateWorkOrder()
+        {
+            ViewBag.Progress = lstProgress;
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreateWorkOrder(WorkOrder myWorkOrder)
+        {
+            lstWorkOrders.Add(myWorkOrder);
+
+            return RedirectToAction("WorkOrder", lstWorkOrders);
+        }
+
+        // EDIT: Work Order
+        public ActionResult EditWorkOrder(int id)
+        {
+            ViewBag.Progress = lstProgress;
+            WorkOrder oWorkOrder = lstWorkOrders.Find(x => x.OrderID == id);
+
+            return View(oWorkOrder);
+        }
+
+        [HttpPost]
+        public ActionResult EditWorkOrder(WorkOrder newWorkOrder)
+        {
+            var obj = lstWorkOrders.FirstOrDefault(x => x.OrderID == newWorkOrder.OrderID);
+            if (obj != null)
+            {
+                obj.Progress = newWorkOrder.Progress;
+                obj.LTNumber = newWorkOrder.LTNumber;
+                obj.CustomerID = newWorkOrder.CustomerID;
+                obj.OrderTotal = newWorkOrder.OrderTotal;
+                obj.DateArrived = newWorkOrder.DateArrived;
+                obj.ReceivedBy = newWorkOrder.ReceivedBy;
+                obj.DueDate = newWorkOrder.DueDate;
+                obj.Quote = newWorkOrder.Quote;
+                obj.Discount = newWorkOrder.Discount;
+                obj.CurrentCost = newWorkOrder.CurrentCost;
+                obj.ConfirmationSentDate = newWorkOrder.ConfirmationSentDate;
+                obj.SummaryReport = newWorkOrder.SummaryReport;
+            }
+
+            return RedirectToAction("WorkOrder");
+        }
+
+        // GET: Work Order Details
+        public ActionResult DetailsWorkOrder(int id)
+        {
+            WorkOrder oWorkOrder = lstWorkOrders.Find(x => x.OrderID == id);
+
+            return View(oWorkOrder);
+        }
+
+        // GET: CompoundAssayDetails (for scheduled date, actual cost to complete, and status)--------
+        public ActionResult CAD()
+        {
+            return View(lstCAD);
+        }
+
+        // CREATE: CAD
+        public ActionResult CreateCAD()
+        {
+            ViewBag.Progress = lstProgress;
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreateCAD(CompoundAssayDetails myCAD)
+        {
+            lstCAD.Add(myCAD);
+
+            return RedirectToAction("CAD", lstCAD);
+        }
+
+        // EDIT: CAD (Scheduled Test)
+        public ActionResult EditCAD(int id)
+        {
+            ViewBag.Progress = lstProgress;
+            CompoundAssayDetails oCAD = lstCAD.Find(x => x.LTNumber == id);
+
+            return View(oCAD);
+        }
+
+        [HttpPost]
+        public ActionResult EditCAD(CompoundAssayDetails newCAD)
+        {
+            var obj = lstCAD.FirstOrDefault(x => x.LTNumber == newCAD.LTNumber);
+            if (obj != null)
+            {
+                obj.LTNumber = newCAD.LTNumber;
+                obj.CompoundSeqNum = newCAD.CompoundSeqNum;
+                obj.AssayID = newCAD.AssayID;
+                obj.Cost = newCAD.Cost;
+                obj.StatusCode = newCAD.StatusCode;
+                obj.ScheduledDate = newCAD.ScheduledDate;
+            }
+
+            return RedirectToAction("CAD");
+        }
+
+        // GET: CAD (Scheduled Test) Details
+        public ActionResult DetailsCAD(int id)
+        {
+            CompoundAssayDetails oCAD = lstCAD.Find(x => x.LTNumber == id);
+
+            return View(oCAD);
+        }
+
+        // GET: Order (now compounds)-----------------------------------------------------------------------------------
         public ActionResult Order()
         {
+            /*
             //test order to always have one in there
             lstOrders.Add(new Order()
             {
@@ -70,6 +193,7 @@ namespace INTEX.Controllers
                 Cost = 55.66,
                 ConfirmationSentDate = "6/18/2012 09:54:22"
             });
+            */
 
             ViewBag.Name = "Work Order: " + ViewBag.WorkOrder;
 
@@ -127,7 +251,7 @@ namespace INTEX.Controllers
                 obj.ConfirmationSentDate = newOrder.ConfirmationSentDate;
             }
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Order");
         }
 
         // GET: Order Details

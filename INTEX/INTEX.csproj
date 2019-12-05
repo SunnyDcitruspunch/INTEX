@@ -222,6 +222,7 @@
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\OrderProgress.cs" />
     <Compile Include="Models\Progress.cs" />
+    <Compile Include="Models\WorkOrder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -248,6 +249,14 @@
     <Content Include="Views\Singapore\Assay.cshtml" />
     <Content Include="Views\Singapore\CreateAssay.cshtml" />
     <Content Include="Views\Singapore\EditAssay.cshtml" />
+    <Content Include="Views\Singapore\WorkOrder.cshtml" />
+    <Content Include="Views\Singapore\CreateWorkOrder.cshtml" />
+    <Content Include="Views\Singapore\EditWorkOrder.cshtml" />
+    <Content Include="Views\Singapore\DetailsWorkOrder.cshtml" />
+    <Content Include="Views\Singapore\CAD.cshtml" />
+    <Content Include="Views\Singapore\CreateCAD.cshtml" />
+    <Content Include="Views\Singapore\EditCAD.cshtml" />
+    <Content Include="Views\Singapore\DetailsCAD.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
